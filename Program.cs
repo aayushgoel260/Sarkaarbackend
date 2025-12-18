@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(options =>
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-var frontendUrl = builder.Configuration["FrontendUrl"] ?? "http://localhost:4200";
+var frontendUrl = builder.Configuration["FrontendUrl"] ?? "https://sarkaarfrontend.onrender.com";
 
 builder.Services.AddCors(options =>
 {
