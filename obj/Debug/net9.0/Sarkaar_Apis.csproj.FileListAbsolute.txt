@@ -330,3 +330,4 @@ C:\Users\aayush.goel\Sarkaar\Sarkaar_Backend\Sarkaar_Apis\obj\Debug\net9.0\refin
 C:\Users\aayush.goel\Sarkaar\Sarkaar_Backend\Sarkaar_Apis\obj\Debug\net9.0\Sarkaar_Apis.pdb
 C:\Users\aayush.goel\Sarkaar\Sarkaar_Backend\Sarkaar_Apis\obj\Debug\net9.0\Sarkaar_Apis.genruntimeconfig.cache
 C:\Users\aayush.goel\Sarkaar\Sarkaar_Backend\Sarkaar_Apis\obj\Debug\net9.0\ref\Sarkaar_Apis.dll
+C:\Users\aayush.goel\Sarkaar\Sarkaar_Backend\Sarkaar_Apis\obj\Debug\net9.0\Sarkaar_Apis.sourcelink.json

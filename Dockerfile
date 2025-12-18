@@ -1,25 +1,25 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base 
+# Base image for runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+ENV ASPNETCORE_ENVIRONMENT=Production
 
-WORKDIR /app 
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
 
-EXPOSE 80 
+# Copy csproj and restore dependencies
+COPY ["Sarkaar_Apis.csproj", "./"]
+RUN dotnet restore
 
-# Build stage 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build 
-
-WORKDIR /src 
-
+# Copy remaining files and publish
 COPY . . 
+RUN dotnet publish -c Release -o /app/publish
 
-RUN dotnet restore 
-
-RUN dotnet publish -c Release -o /app 
-
-# Final stage 
-FROM base AS final 
-
-WORKDIR /app 
-
-COPY --from=build /app . 
+# Final stage
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
 
 ENTRYPOINT ["dotnet", "Sarkaar_Apis.dll"]
